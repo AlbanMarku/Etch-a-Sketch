@@ -1,0 +1,16 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    font-family: 'Roboto', sans-serif;
+  }
+
+#grid-container {
+    display: grid;
+    border: 3px solid blue;
+    grid-template-columns: repeat(5, 50px);
+    grid-auto-rows: 50px;
+}
+
+.grid-item {
+    border: 3px solid red;
+}
