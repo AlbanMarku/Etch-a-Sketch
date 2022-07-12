@@ -8,5 +8,3 @@ for (let i = 0; i < amount; i++) {
     gridElement.classList.add("grid-item");
     boxContainer.appendChild(gridElement);    
 }
-
-

@@ -4,7 +4,7 @@
     font-family: 'Roboto', sans-serif;
   }
 
-#grid-container {
+/* #grid-container {
     display: grid;
     border: 3px solid blue;
     grid-template-columns: repeat(5, 50px);
@@ -13,4 +13,44 @@
 
 .grid-item {
     border: 3px solid red;
+} */
+
+.mainContainer {
+    display: grid;
+    border: 3px solid red;
+    grid-template-columns: 20% auto;
+    grid-template-rows: 60px auto 60px;
+    grid-template-areas: "header header"
+                         "sidebar main"
+                         "footer footer";
+}
+
+.titleArea {
+    border: 3px solid blue;
+    grid-area: header;
+
+}
+
+.sideOptions {
+    border: 3px solid orange;
+    grid-area: sidebar;
+}
+
+.grid-container {
+    border: 3px solid pink;
+    grid-area: main;
+
+}
+
+.footerContainer {
+    border: 3px solid black;
+    grid-area: footer;
+
+}
+
+#colorPicker {
+    width: 70px;
+    height: 70px;
+    background-color: red;
+    border-radius: 50%;
 }
