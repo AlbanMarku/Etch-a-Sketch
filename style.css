@@ -17,23 +17,41 @@
 
 .mainContainer {
     display: grid;
+    height: 100vh;
     border: 3px solid red;
-    grid-template-columns: 20% auto;
-    grid-template-rows: 60px auto 60px;
+    grid-template-columns: 30% auto;
+    grid-template-rows: 10% 70% auto;
     grid-template-areas: "header header"
                          "sidebar main"
                          "footer footer";
+    margin-left: 100px;
+    margin-right: 100px;
 }
 
 .titleArea {
     border: 3px solid blue;
     grid-area: header;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
 }
 
 .sideOptions {
     border: 3px solid orange;
     grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px 0px;
+    padding: 20px;
+}
+
+.buttonArea {
+    display: flex;
+    flex-direction: column;
+    gap: 30px 0px;
 }
 
 .grid-container {
@@ -45,6 +63,9 @@
 .footerContainer {
     border: 3px solid black;
     grid-area: footer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
 }
 
