@@ -4,28 +4,32 @@
     font-family: 'Roboto', sans-serif;
   }
 
-body{
-
-}
-
-.mainContainer {
-    display: grid;
+body {
     height: 100vh;
-    width: 100vw;
-    grid-template-columns: 30% auto;
-    grid-template-rows: 10% 70% auto;
-    grid-template-areas: "header header"    
-                         "sidebar main"
-                         "footer footer";
-    background-image: linear-gradient(rgb(255, 0, 191), rgb(0, 255, 242));
+    background-image:linear-gradient(rgb(0, 255, 234), rgb(234, 4, 255));
 }
 
-.titleArea {
-    grid-area: header;
+main{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    max-width: 1100px;
+    margin: 0 auto;
+    height: 60%;
+}
+header{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    font-size: 30px;
+    height: 20%;
+}
+
+#colorPicker {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
 }
 
 .sideOptions {
@@ -36,8 +40,8 @@ body{
     justify-content: center;
     gap: 30px 0px;
     padding: 20px;
-    color: white;
-
+    color: black;
+    min-width: 180px;
 }
 
 .slideContainer {
@@ -53,6 +57,10 @@ body{
     gap: 30px 0px;
 }
 
+.grid-item {
+    border: 3px solid red;
+}
+
 #grid-container {
     grid-area: main;
     display: grid;
@@ -61,24 +69,19 @@ body{
     height: 500px;
     grid-template-columns: repeat(5, auto);
     grid-template-rows: repeat(5,auto);
+    border: 3px solid orange;
 }
 
-.footerContainer {
-    grid-area: footer;
+footer {
+    position: absolute;
+    bottom: 0;
+    left: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-
+    gap: 10px;
+    width: 100%;
+    padding: 10px;
+    font-size: 20px;
 }
 
-#colorPicker {
-    width: 100px;
-    height: 100px;
-    background-color: white;
-    border-radius: 50%;
-}
-
-.grid-item {
-    border: 3px solid red;
-}
