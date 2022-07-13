@@ -9,16 +9,11 @@ document.body.onmousedown = () => (mouseDown = true)
 document.body.onmouseup = () => (mouseDown = false)
 
 window.onload = () => {
-    numberOnSlider.innerHTML = slider.value;
-    let finalInput = numberOnSlider.innerHTML;
-    updateGridSize(finalInput);
+    clearGrid();
   }
 
 slider.oninput = function() {
-    numberOnSlider.innerHTML = this.value;
-    let finalInput = numberOnSlider.innerHTML;
     clearGrid();
-    updateGridSize(finalInput);
   }
 
 
@@ -37,6 +32,9 @@ function updateGridSize(amount) {
 
 function clearGrid() {
     boxContainer.innerHTML = ""
+    numberOnSlider.innerHTML = slider.value;
+    let finalInput = numberOnSlider.innerHTML;
+    updateGridSize(finalInput);
 }
 
 function changeColor(e) {
@@ -49,6 +47,8 @@ function changeColor(e) {
 
 butt.forEach(element => {
   element.addEventListener("click", () =>{
-    
+    if(element.textContent === "Clear") {
+      clearGrid();
+    }
   });
 });
