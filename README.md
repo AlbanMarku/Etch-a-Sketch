@@ -1,2 +1,2 @@
 # Etch-a-Sketch
-Practicing using CSS Grid.
+Understanding how DOM elements work.

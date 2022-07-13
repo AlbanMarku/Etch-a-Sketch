@@ -5,6 +5,7 @@ const picker = document.getElementById("colorPicker");
 const butt = document.querySelectorAll("button");
 
 let mouseDown = false
+let toggler = false
 document.body.onmousedown = () => (mouseDown = true)
 document.body.onmouseup = () => (mouseDown = false)
 
@@ -23,9 +24,9 @@ function updateGridSize(amount) {
 
     for (let i = 0; i < amount * amount; i++) {
         const gridElement = document.createElement("div");
-        gridElement.removeAttribute("draggable");
-        gridElement.addEventListener('mouseover', changeColor)
-        gridElement.addEventListener('mousedown', changeColor)
+        gridElement.classList.add("grid-tem");
+        gridElement.addEventListener('mouseover', changeColor);
+        gridElement.addEventListener('mousedown', changeColor);
         boxContainer.appendChild(gridElement);    
     }
 }
@@ -37,11 +38,21 @@ function clearGrid() {
     updateGridSize(finalInput);
 }
 
-function changeColor(e) {
-  if (e.type === 'mouseover' && !mouseDown) {
-    return
+function deleteToggle() {
+  if (toggler) {
+    toggler = false;
   } else {
-    e.target.style.backgroundColor = picker.value;
+    toggler = true;
+  }
+}
+
+function changeColor(e) {
+  if (e.type === 'mouseover' && mouseDown) {
+    if (!toggler) {
+      e.target.style.backgroundColor = picker.value;
+    } else if (toggler) {
+      e.target.style.backgroundColor = "white";
+    }
   }
 }
 
@@ -50,5 +61,11 @@ butt.forEach(element => {
     if(element.textContent === "Clear") {
       clearGrid();
     }
+
+    if (element.textContent === "Eraser") {
+      deleteToggle();
+      console.log(toggler);
+      element.classList.toggle("activeButton");
+    }
   });
-});
+})
