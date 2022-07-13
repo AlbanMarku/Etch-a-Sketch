@@ -28,8 +28,6 @@ header{
 #colorPicker {
     width: 100px;
     height: 100px;
-    background-color: red;
-    border-radius: 50%;
 }
 
 .sideOptions {
@@ -58,7 +56,6 @@ header{
 }
 
 .grid-item {
-    border: 3px solid red;
 }
 
 #grid-container {
